@@ -420,7 +420,7 @@ body {
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .top-row, .bottom-row {
         grid-template-columns: 1fr;
     }
