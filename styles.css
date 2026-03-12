@@ -15,7 +15,7 @@ body {
 
 /* ===== Dashboard Layout ===== */
 .dashboard {
-    max-width: 1400px;
+    max-width: 1920px;
     margin: 0 auto;
     padding: 16px;
     display: flex;
@@ -420,17 +420,11 @@ body {
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .top-row, .bottom-row {
         grid-template-columns: 1fr;
     }
     
-    .details-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 640px) {
     .river-metrics {
         grid-template-columns: 1fr;
     }
