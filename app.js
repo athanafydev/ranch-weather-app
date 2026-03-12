@@ -577,8 +577,13 @@ function formatTimeHour(date) {
 // ===== Main Data Fetch =====
 async function fetchAllData() {
     try {
-        // Get location
-        const loc = await getUserLocation();
+        let loc;
+        try {
+            loc = await getUserLocation();
+        } catch (err) {
+            console.log('Location access denied, using fallback location');
+            loc = { lat: 44.7372828, lon: -121.2447303 };
+        }
         
         // Fetch weather and river data in parallel
         const [weatherData, usgsData] = await Promise.all([
@@ -607,10 +612,6 @@ async function fetchAllData() {
         
     } catch (err) {
         console.error('Error fetching data:', err);
-        // Show error to user gracefully
-        if (err.code === 1) {
-            document.getElementById('location-name').textContent = 'Location access denied';
-        }
     }
 }
 
