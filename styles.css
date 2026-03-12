@@ -38,6 +38,12 @@ body {
     gap: 16px;
 }
 
+@media (min-width: 641px) {
+    .top-row {
+        grid-template-columns: 1fr 2.2fr !important;
+    }
+}
+
 /* ===== Weather Card ===== */
 .weather-card {
     display: flex;
@@ -238,6 +244,12 @@ body {
     display: grid;
     grid-template-columns: 1fr 2.2fr;
     gap: 16px;
+}
+
+@media (min-width: 641px) {
+    .bottom-row {
+        grid-template-columns: 1fr 2.2fr !important;
+    }
 }
 
 /* ===== 24-Hour Forecast ===== */
